@@ -13,6 +13,8 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
+console.log('mongoURL 1: ', mongoURL);
+
 if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
   var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
       mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
@@ -41,6 +43,20 @@ var initDb = function(callback) {
   var mongodb = require('mongodb');
   if (mongodb == null) return;
 
+ console.log('mongodb version: ', require("mongodb/package").version);
+ console.log('mongoURL 2: ', mongoURL);
+    console.log('mongoServiceName: ', mongoServiceName);
+    console.log('mongoHost: ', mongoServiceName);
+    console.log('mongoPort: ', mongoHost);
+    console.log('mongoDatabase: ', mongoDatabase);
+    console.log('mongoPassword: ', mongoPassword);
+    console.log('mongoUser: ', mongoUser);
+    console.log('mongoURLLabel: ', mongoURLLabel);
+    console.log('mongoURLLabel: ', mongoURLLabel);
+    console.log('mongoURLLabel: ', mongoURLLabel);
+    console.log('mongoURLLabel: ', mongoURLLabel);
+    
+    
   mongodb.connect(mongoURL, function(err, conn) {
     if (err) {
       callback(err);
