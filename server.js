@@ -46,15 +46,15 @@ var initDb = function(callback) {
  console.log('mongodb version: ', require("mongodb/package").version);
  console.log('mongoURL 2: ', mongoURL);
     console.log('mongoServiceName: ', mongoServiceName);
-    console.log('mongoHost: ', mongoServiceName);
-    console.log('mongoPort: ', mongoHost);
+    console.log('mongoHost: ', mongoHost);
+    console.log('mongoPort: ', mongoPort);
     console.log('mongoDatabase: ', mongoDatabase);
     console.log('mongoPassword: ', mongoPassword);
     console.log('mongoUser: ', mongoUser);
     console.log('mongoURLLabel: ', mongoURLLabel);
-    console.log('mongoURLLabel: ', mongoURLLabel);
-    console.log('mongoURLLabel: ', mongoURLLabel);
-    console.log('mongoURLLabel: ', mongoURLLabel);
+//    console.log('mongoURLLabel: ', mongoURLLabel);
+//    console.log('mongoURLLabel: ', mongoURLLabel);
+//    console.log('mongoURLLabel: ', mongoURLLabel);
     
     
   mongodb.connect(mongoURL, function(err, conn) {
