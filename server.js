@@ -42,6 +42,7 @@ var initDb = function(callback) {
 
   var mongodb = require('mongodb');
   if (mongodb == null) return;
+    var MongoClient = mongodb.MongoClient;
 
  console.log('mongodb version: ', require("mongodb/package").version);
  console.log('mongoURL 2: ', mongoURL);
