@@ -59,7 +59,7 @@ var initDb = function(callback) {
     
     
 //  mongodb.connect(mongoURL, function(err, conn) {
-    MongoClient.connect(url, function (err, client) {
+    MongoClient.connect(mongoURL, function (err, client) {
     if (err) {
       callback(err);
       return;
