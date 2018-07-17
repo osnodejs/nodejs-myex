@@ -57,13 +57,15 @@ var initDb = function(callback) {
 //    console.log('mongoURLLabel: ', mongoURLLabel);
     
     
-  mongodb.connect(mongoURL, function(err, conn) {
+//  mongodb.connect(mongoURL, function(err, conn) {
+    MongoClient.connect(url, function (err, client) {
     if (err) {
       callback(err);
       return;
     }
 
-    db = conn;
+//    db = conn;
+    db = client.db(mongoDatabase);
     dbDetails.databaseName = db.databaseName;
     dbDetails.url = mongoURLLabel;
     dbDetails.type = 'MongoDB';
